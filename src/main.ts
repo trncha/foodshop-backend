@@ -10,7 +10,7 @@ async function bootstrap() {
 
 	const config = new DocumentBuilder()
 		.setTitle('MyFoodShop API Document')
-		.setDescription('My FoodShop API description')
+		.setDescription('My FoodShop API description 1')
 		.setVersion('1.0')
 		.build();
 	const document = SwaggerModule.createDocument(app, config);
