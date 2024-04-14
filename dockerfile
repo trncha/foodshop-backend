@@ -14,10 +14,9 @@ FROM node:18-alpine
 
 WORKDIR /usr/src/app
 
+RUN mkdir -p ./uploads
+
 COPY --from=build /usr/src/app/dist ./dist
-
-COPY --from=build /usr/src/app/uploads ./uploads
-
 COPY package*.json ./
 
 RUN npm install --only=production
