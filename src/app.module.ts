@@ -13,10 +13,9 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 @Module({
 	imports: [
 		ServeStaticModule.forRoot({
-			rootPath: join(__dirname, '..', 'uploads'),
-			serveRoot: '/uploads',
-			renderPath: undefined,
-		  }),
+			rootPath: join(__dirname, '..', 'uploads/image'),
+			serveRoot: '/image',
+		}),
 		TypeOrmModule.forRoot(typeOrmConfig),
 		FoodModule
 	],
