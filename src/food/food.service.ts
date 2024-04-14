@@ -17,6 +17,7 @@ export class FoodService {
 	) { }
 
 	async create(createFoodDto: CreateFoodDto, image: Express.Multer.File) {
+		console.log('image', image);
 		
 		try {
 			const itemFood: FoodEntity = {
