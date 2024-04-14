@@ -8,8 +8,6 @@ RUN npm install
 
 COPY . .
 
-COPY --from=build /usr/src/app/uploads /usr/src/app/uploads
-
 RUN npm run build
 
 FROM node:18-alpine
