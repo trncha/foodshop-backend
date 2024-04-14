@@ -41,12 +41,12 @@ jobs:
           GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
         run: |
           gcloud auth configure-docker asia-southeast1-docker.pkg.dev
-          docker build -t asia-southeast1-docker.pkg.dev/my-food-shop-420214/repo-myfoodshop/backend:latest .
-          docker push asia-southeast1-docker.pkg.dev/my-food-shop-420214/repo-myfoodshop/backend:latest
+          docker build -t asia-southeast1-docker.pkg.dev/myfoodshop/repofoodshop/backend:latest .
+          docker push asia-southeast1-docker.pkg.dev/myfoodshop/repofoodshop/backend:latest
       # - name: Deploy to Cloud Run
       #   env:
       #     SERVICE_NAME: backend	
-      #     IMAGE_URL: asia-southeast1-docker.pkg.dev/my-food-shop-420214/repo-myfoodshop/backend:latest
+      #     IMAGE_URL: asia-southeast1-docker.pkg.dev/myfoodshop/repofoodshop/backend:latest
       #     REGION: asia-southeast1
       #   run: |
       #     gcloud run deploy $SERVICE_NAME \
