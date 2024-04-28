@@ -17,8 +17,6 @@ export class FoodController {
 	@CreateFoodSwagger()
 	@UseInterceptors(FileInterceptor('image', { storage: diskStorage }))
 	create(@Body() createFoodDto: CreateFoodDto, @UploadedFile() image: Express.Multer.File) {
-		console.log('createFoodDto', createFoodDto);
-		
 		return this.foodService.create(createFoodDto, image);
 	}
 
