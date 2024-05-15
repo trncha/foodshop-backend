@@ -9,7 +9,7 @@ async function bootstrap() {
 	app.setGlobalPrefix('api-myfoodShop');
 
 	const config = new DocumentBuilder()
-		.setTitle('MyFoodShop API Document11')
+		.setTitle('MyFoodShop API Document')
 		.setDescription('My FoodShop API description')
 		.setVersion('1.0')
 		.build();
