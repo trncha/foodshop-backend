@@ -41,16 +41,16 @@ jobs:
           GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
         run: |
           gcloud auth configure-docker asia-southeast1-docker.pkg.dev
-          docker build -t asia-southeast1-docker.pkg.dev/myfoodshop-420307/repo-foodshop/backend:latest .
-          docker push asia-southeast1-docker.pkg.dev/myfoodshop-420307/repo-foodshop/backend:latest
-      - name: Deploy to Cloud Run
-        env:
-          SERVICE_NAME: backend	
-          IMAGE_URL: asia-southeast1-docker.pkg.dev/myfoodshop-420307/repo-foodshop/backend:latest
-          REGION: asia-southeast1
-        run: |
-          gcloud run deploy $SERVICE_NAME \
-            --image $IMAGE_URL \
-            --region $REGION \
-            --platform managed \
-            --allow-unauthenticated
+          docker build -t asia-southeast1-docker.pkg.dev/food-shop-101/repo-foodshop/backend:latest .
+          docker push asia-southeast1-docker.pkg.dev/food-shop-101/repo-foodshop/backend:latest
+      # - name: Deploy to Cloud Run
+      #   env:
+      #     SERVICE_NAME: backend	
+      #     IMAGE_URL: asia-southeast1-docker.pkg.dev/food-shop-101/repo-foodshop/backend:latest
+      #     REGION: asia-southeast1
+      #   run: |
+      #     gcloud run deploy $SERVICE_NAME \
+      #       --image $IMAGE_URL \
+      #       --region $REGION \
+      #       --platform managed \
+      #       --allow-unauthenticated

@@ -28,6 +28,8 @@ export class HttpExceptionFilter implements ExceptionFilter {
 			timestamp: new Date().toISOString(),
 			path: request.url,
 			method: request.method,
+			success: false,
+			message: "Error Call Service",
 			errorInfo: exception instanceof HttpException ? exception.getResponse() : 'Internal Server Error',
 		};
 

@@ -17,7 +17,7 @@ export class FoodService {
 	) { }
 
 	async create(createFoodDto: CreateFoodDto, image: Express.Multer.File) {
-		
+
 		try {
 			const itemFood: FoodEntity = {
 				...createFoodDto,
@@ -27,7 +27,7 @@ export class FoodService {
 				updateDate: new Date()
 			};
 			const responseData = await this.foodRepository.save(itemFood);
-			return { responseData }
+			return { message: 'Created food success', data: responseData }
 		} catch (error) {
 			throw new ErrorException(error)
 		}
@@ -86,11 +86,12 @@ export class FoodService {
 		const food = await this.foodRepository.findOne({ where: { id } });
 		if (!food) throw new NotFoundException(`Entity with foodId ${id} not found`);
 
-		const pathImage = food.image ? `${configUploadAttach.rootDir}/${food.image}`: null;
+		const pathImage = food.image ? `${configUploadAttach.rootDir}/${food.image}` : null;
 		if (pathImage && fs.existsSync(pathImage)) {
 			fs.unlinkSync(pathImage);
 		}
 
 		await this.foodRepository.remove(food);
+		return { message: 'Remove food success' }
 	}
 }

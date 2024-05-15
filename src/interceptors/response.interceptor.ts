@@ -15,6 +15,7 @@ export class TransformInterceptor implements NestInterceptor {
                     timestamp: new Date().toISOString(),
                     path: request.url,
                     method: request.method,
+					success: true,
                     ...data,
                 };
             }),
